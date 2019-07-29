@@ -8,16 +8,30 @@ namespace Tests
     {
         private int[] array;
 
+        [OneTimeSetUp]
+        public void NewArray()
+        {
+            // run before all [Test]
+            array = new int[] { 1, 2, 3, 4 };
+        }
+
+        [OneTimeTearDown]
+        public void SetArrayAreNull()
+        {
+            // run after all [Test] completely
+            array = null;
+        }
+
         [SetUp]
         public void TestSetUp()
         {
-            array = new int[] { 1, 2, 3, 4 };
+            // run before each [Test]
         }
 
         [TearDown]
         public void TestTearDown()
         {
-            array = null;
+            // run after each [Test] completely
         }
 
         [Test]
