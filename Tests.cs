@@ -8,19 +8,9 @@ namespace Tests
         [Test]
         public void HelloMe()
         {
-            Assert.Pass("Hello Me!");
-        }
-
-        [Test]
-        public void HelloWorld()
-        {
-            Assert.Pass("Hello World!");
-        }
-
-        [Test]
-        public void HelloCat()
-        {
-            Assert.Pass("Hello Cat!");
+            int[] array = new int[]{1, 2, 3, 4, 5};
+            // it can custom assert message and result :)
+            Assert.That(false, "HelloMe Array", array);
         }
     }
 }
